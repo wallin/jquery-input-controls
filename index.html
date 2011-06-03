@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="https://github.com/wallin/jquery-input-controls/raw/master/src/jquery.inputCtl.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.demo_input').inputCtl({minVal: 0, maxVal: 10, step: 2});
+      });
+    </script>
+    <style type="text/css">
+
+      .round {
+        /* Round corners */
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+      }
+
+      body {
+        font-family: helvetica, arial, sans-serif;
+        font-size: 11px;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin: 0;
+        color: #000;
+      }
+
+      div.wrapper {
+        margin: 0;
+        padding: 50px 0;
+      }
+
+      div.content {
+        width: 640px;
+        margin: 0 auto;
+
+      }
+
+      div#main_wrapper {
+        background-color: #F0F8FF;
+        border-bottom: 1px solid #ccc;
+      }
+
+      div#main {
+        width: 640px;
+        margin: 0 auto;
+        font-size: 13px;
+        color: #777;
+      }
+
+      a {
+        color: #000;
+        font-weight: bold;
+      }
+
+      div.author {
+        color: #999;
+        font-size: 11px;
+        margin-bottom: 30px;
+      }
+
+      div.download {
+        float: right;
+        display: inline;
+        background-color: #708090;
+        color: #fff;
+        padding: 20px;
+        margin-left: 40px;
+        font-size: 11px;
+      }
+
+      h2 {
+        font-size: 18px;
+        margin-top: 40px;
+      }
+
+      div.download h2 {
+        margin: 0;
+      }
+
+      div.download a {
+        font-size: 13px;
+        color: #FFA500;
+      }
+
+      /* Usage */
+
+      code, pre {
+        font-family: Consolas, "Courier New", monotype;
+      }
+
+      div.usage {
+        background-color: #eee;
+        padding: 20px;
+      }
+
+      div.usage h3 {
+        border-bottom: 1px solid #B1B1B1;
+        font-size: 15px;
+        margin: 0.2em 0 0 0;
+        padding: 0px 0px 2px 0;
+      }
+
+      div.usage > p {
+        font-size: 13px;
+      }
+
+      div.options {
+        padding: 0 10px;
+      }
+
+      div.options h4 {
+        border-top: 1px solid #DDD;
+        color: #222;
+        font-size: 1.3em;
+        margin: 10px 0 0 0;
+        padding-top: 10px;
+      }
+
+      div.options > p {
+        font-size: 11px;
+        margin: 0.5em 0px;
+      }
+
+      div.options h4 span {
+        float: right;
+        font-size: 11px;
+        font-weight: normal;
+        color: #777;
+      }
+
+      div#demo input {
+        width: 2em;
+      }
+
+    </style>
+    <title>Input controls - jQuery plugin</title>
+  </head>
+  <body>
+    <div id="main_wrapper" class="wrapper">
+      <div id="main" class="content">
+        <h1>jQuery input controls plugin v0.1</h1>
+        <div class="author">by: <a href="http://sewa.se">Sebastian Wallin</a></div>
+        <div class="download round">
+          <h2>Download</h2>
+          <a href="https://github.com/wallin/jquery-input-controls/raw/master/src/jquery.inputCtl.js">jquery.inputCtl.js</a> - Source (1.5 KB)<br/>
+          <a href="https://github.com/wallin/jquery-input-controls/raw/master/src/jquery.inputCtl.min.js">jquery.inputCtl.min.js</a> - Minified (0.7 KB)
+        </div>
+        <p>
+          Non obtrusive plugin for adding input box controls for integer values
+        </p>
+        <p>Feel free to use it and abuse it!</p>
+      </div>
+    </div>
+    <div id="usage" class="content">
+      <div id="example">
+        <h2>Example</h2>
+        Below code adds two buttons next to three regular <code>&lt;input&gt;</code> elements: one for increasing, and one for decreasing the value in each box
+        <pre>
+  $(document).ready(function() {
+    $('.demo_input').inputCtl({minVal: 0, maxVal: 10, step: 2});
+  });
+        </pre>
+        <div id="demo" class="content">
+          <input class="demo_input" value="2"/><br/>
+          <input class="demo_input" value="2"/><br/>
+          <input class="demo_input" value="2"/>
+        </div>
+      </div>
+      <h2>Usage</h2>
+      <div class="usage">
+        <h3>.inputCtl( options )</h3>
+        <p>
+          <strong>options</strong> Set of key/value pairs to configure the controls.
+          All options are optional.
+        </p>
+        <div class="options">
+          <h4>step <span>Integer</span></h4>
+          <p>Step to increase/decrease the input box value with. Default is <code>1</code></p>
+
+          <h4>minVal <span>Integer</span></h4>
+          <p>Lower limit of input box value. Default is <code>false</code>, ie. no minimum value</p>
+
+          <h4>maxVal <span>Integer</span></h4>
+          <p>Upper limit of input box value. Default is <code>false</code>, ie. no maximum value</p>
+
+          <h4>incText <span>String</span></h4>
+          <p>Text to display in the increase button. Default is <code>+</code> </p>
+
+          <h4>decText <span>String</span></h4>
+          <p>Text to display in the decrease button. Default is <code>-</code> </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
